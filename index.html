@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap year calculator</title>
+    <script src="isLeapYear.js" defer></script>
+</head>
+<body>
+    <input type="number" id="yearInput" placeholder="Enter a year">
+    <button id="checkButton">Check Leap Year</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('checkButton').addEventListener('click', function () {
+            const yearStr = document.getElementById("yearInput").value;
+            const year = parseInt(yearStr, 10);
+            if (Number.isNaN(year)) {
+                document.getElementById("result").textContent = "Please enter a valid year.";
+                return;
+            }
+            const result = isLeapYear(year);
+            document.getElementById("result").textContent =
+                year + " is" + (result ? "" : " not") + " a leap year.";
+        });
+    </script>
+    <div style="margin-top: 40px;">
+        <h2>Check for Square in Array</h2>
+    <input type="array" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <input type="number" id="numberInput" placeholder="Enter a number to check its square">
+    <button id="checkSquareButton">Check for Square</button>
+    <p id ="squareResult"></p>
+    </div>
+    <script>
+        document.getElementById('checkSquareButton').addEventListener('click', function () {
+            const arrayStr = document.getElementById("arrayInput").value;
+            const numberStr = document.getElementById("numberInput").value;
+            const numbers = arrayStr.split(',').map(num => parseInt(num.trim(), 10)).filter(num => !Number.isNaN(num));
+            const aNumber = parseInt(numberStr, 10);
+            if (Number.isNaN(aNumber)) {
+                document.getElementById("squareResult").textContent = "Please enter a valid number.";
+                return;
+            }
+            const result = containsNumbersSquare(numbers, aNumber);
+            document.getElementById("squareResult").textContent =
+                "The array " + (result ? "contains" : "does not contain") + " the square of " + aNumber + ".";
+        });
+    </script>
+
+    <input id ="hoursInput" placeholder = "Enter hours">
+    <button i="convertToMinutes">Convert to minutes</button>
+    <p id="minutesResult"></p>
+</body>
+</html>
