@@ -48,7 +48,28 @@
     </script>
 
     <input id ="hoursInput" placeholder = "Enter hours">
-    <button i="convertToMinutes">Convert to minutes</button>
+    <button id="checkButtonHours">Convert to minutes</button>
     <p id="minutesResult"></p>
+    <script>
+        console.log("quack1")
+        document.getElementById('checkButtonHours').addEventListener('click', function () {
+            console.log("quack2")
+            const arrayStr = document.getElementById('hoursInput').value;
+            document.getElementById('minutesResult').textContent = convertsToMinutes(arrayStr)
+            
+        });
+    </script>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">References</a>
+    <br/>
+    <a href="https://devdocs.io/javascript/">More References</a>
+    <br/>
+    <a href="https://www.geeksforgeeks.org/javascript-array-reference/">Array References</a>
+    <p>Task 4b</p>
+    <p>They help with undestanding technical documentation, integrating JS code into HTML page. Some give nice visual example on how the functions work or help with CSS formatting. I found these quite helpful and also asked a friend for help. </p>
+    <p>You can find the rest of the assignment in the JS file!</p>
+    
+
 </body>
 </html>
+
+<!-- defer,  -->
