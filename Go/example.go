@@ -32,7 +32,7 @@ func main() {
 	http.HandleFunc("/brrr", brrr)
 	http.HandleFunc("/health", health)
 
-	fmt.Printf("Server is sup and running\n")
+	fmt.Printf("Server is up and running\n")
 	_ = http.ListenAndServe(":8080", nil)
 
 }
